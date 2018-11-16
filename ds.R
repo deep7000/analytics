@@ -82,7 +82,6 @@ addmargins(m1,c(1,2),list(list))
 
 
 #dataframe ----
-
-
+#combine vectors to be combined into DF()
 
 #factors
