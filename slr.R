@@ -3,7 +3,7 @@
 #rep, recode, split, partition, subset, loops, cast & melt
 #missing values. duplicates, apply
 #graphs - bar, multiple line, pie, box, corrgram
-?lm
+women
 fit = lm(weight ~ height,data = women)
 summary(fit)
 

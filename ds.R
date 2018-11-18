@@ -83,5 +83,30 @@ addmargins(m1,c(1,2),list(list))
 
 #dataframe ----
 #combine vectors to be combined into DF()
-
-#factors
+(rollno= 1:30)
+(sname = paste('student', 1:30,sep=''))
+(gender=sample(c('M','F'), size=30, replace=T, prob = c(0.7,0.3)))
+(marks1= floor(rnorm(30,40,5)))
+(marks2= ceiling(rnorm(30,40,5)))
+(course = sample(c('BBA','MBA'), size=30,replace=T,prob=c(0.5,0.5)))
+#create dataframe
+df1= data.frame(rollno, sname, gender, marks1, marks2, course, stringsAsFactors = F)
+str(df1)
+head(df1)#first 6 rows
+tail(df1,n=3)
+class(df1)
+summary(df1)
+df1
+#assigning factors
+df1$gender=factor(df1$gender)
+df1$course=factor(df1$course)
+summary(df1)
+df1[1:10,]
+df1$gender
+head(df1[,c(2,4)])
+#as per conditions
+df1[ marks1>50 & gender=='M',]
+df1[ marks1>50 & gender=='M',c('rollno','sname','marks1')]
+(aggregate(df1$marks1, by= list(df1$gender, df1$course), FUN=mean))
+(aggregate(cbind(marks1,marks2)))
+df1
